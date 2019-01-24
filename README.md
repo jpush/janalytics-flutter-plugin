@@ -1,0 +1,1 @@
+# janalytics-flutter-plugin
