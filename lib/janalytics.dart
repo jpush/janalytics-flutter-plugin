@@ -75,7 +75,7 @@ class Janalytics {
       double eventValue,
       {Map<String,String> extMap}){
     _channel.invokeMethod(
-        "onCountEvent",
+        "onCalculateEvent",
         {"eventId":eventId,"eventValue":eventValue,"extMap":extMap}
     );
   }

@@ -437,7 +437,7 @@ class AccountPageState extends State<AccountPage> {
       try{
         paid = int.parse(controllerPaid.text);
       }on Exception{
-        DemoUtils.showToast(ctx, "sex should be int");
+        DemoUtils.showToast(ctx, "paid should be int");
       }
     }
     String phone;
@@ -495,7 +495,6 @@ class AccountPageState extends State<AccountPage> {
     try{
       int period = int.parse(text);
       janalytics.setAnalyticsReportPeriod(period);
-      DemoUtils.showToast(ctx, "设置上报周期成功");
     }on Exception {
       DemoUtils.showToast(ctx, "时长应当是整数");
     }catch (e){

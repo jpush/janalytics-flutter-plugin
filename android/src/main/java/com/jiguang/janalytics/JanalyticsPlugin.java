@@ -248,7 +248,12 @@ public class JanalyticsPlugin implements MethodCallHandler {
 
         Account account = new Account(accountID);
         if (creationTimeObj != null){
-            long creationTime = (long) creationTimeObj;
+            long creationTime ;
+            if (creationTimeObj instanceof Long){
+                creationTime = (long) creationTimeObj;
+            }else{
+                creationTime = (int)creationTimeObj;
+            }
             account.setCreationTime(creationTime);        //账户创建的时间戳
         }
         if (sexObj != null){
