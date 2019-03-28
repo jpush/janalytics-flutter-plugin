@@ -1,0 +1,47 @@
+group 'com.jiguang.janalytics'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                JPUSH_APPKEY : "f93ce12e20d3706233e52a5b", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+}
+dependencies {
+    implementation 'cn.jiguang.sdk:janalytics:1.2.2'
+    // 此处以JAnalytics 1.2.2 版本为例
+    implementation 'cn.jiguang.sdk:jcore:1.2.7'
+    // 此处以JCore 1.2.7 版本为例。
+    compileOnly files('libs/flutter.jar')
+}
