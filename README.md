@@ -7,7 +7,7 @@
 
 ```yaml
 dependencies:
-  janalytics_flutter: 0.0.1
+  janalytics: 0.0.1
 ```
 
 ### 配置
