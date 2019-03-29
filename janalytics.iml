@@ -84,7 +84,7 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/flutter/ios/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/janalytics_flutter/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/janalytics/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/package_info/android/.settings/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/package_info/android/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/package_info/android/src/main/java/io/flutter/packages" />
@@ -140,11 +140,9 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Frameworks/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/JAnalytics/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/janalytics_flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/package_info/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/JAnalytics/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/janalytics_flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/package_info/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/packages" />
@@ -159,7 +157,6 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/JAnalytics/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/JCore/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/Pods-Runner/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/janalytics_flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/package_info/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/packages" />
@@ -174,6 +171,9 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner.xcodeproj/xcuserdata/shikk.xcuserdatad/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner.xcodeproj/xcuserdata/shikk.xcuserdatad/xcschemes/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner.xcworkspace/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner.xcworkspace/xcshareddata/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner.xcworkspace/xcuserdata/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner.xcworkspace/xcuserdata/shikk.xcuserdatad/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Runner/Assets.xcassets/packages" />
