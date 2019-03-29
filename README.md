@@ -1,14 +1,50 @@
-# janalytics
+[![QQ Group](https://img.shields.io/badge/QQ%20Group-862401307-red.svg)]()
+# JAnalytics Flutter Plugin
 
-A new Flutter plugin.
+### 安装
 
-## Getting Started
+在工程 pubspec.yaml 中加入 dependencies
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.io/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+```yaml
+dependencies:
+  janalytics_flutter: 0.0.1
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### 配置
+
+##### Android:
+
+在 `/android/app/build.gradle` 中添加下列代码：
+
+```groovy
+android: {
+  ....
+  defaultConfig {
+    applicationId "替换成自己应用 ID"
+    ...
+    ndk {
+	//选择要添加的对应 cpu 类型的 .so 库。
+	abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'mips', 'mips64', 'arm64-v8a',        
+    }
+
+    manifestPlaceholders = [
+        JPUSH_PKGNAME : applicationId,
+        JPUSH_APPKEY : "appkey", // NOTE: JPush 上注册的包名对应的 Appkey.
+        JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+    ]
+  }    
+}
+```
+
+### 使用
+
+```dart
+import 'package:janalytics/janalytics.dart';
+```
+
+### APIs
+
+**注意** : 需要先调用 Janalytics.setup 来初始化插件，才能保证其他功能正常工作。
+
+ [参考](./documents/APIs.md)
+
