@@ -48,7 +48,7 @@ class HomeActivityState extends State<HomeActivity>
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    janalytics.setup(appKey: "f93ce12e20d3706233e52a5b", channel: "devloper-default"); // 初始化sdk
+    janalytics.setup(appKey: "e58a32cb3e4469ebf31867e5", channel: "devloper-default"); // 初始化sdk
     janalytics.setDebugMode(true); // 打开调试模式
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling

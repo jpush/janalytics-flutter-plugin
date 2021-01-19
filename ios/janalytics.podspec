@@ -10,12 +10,13 @@ A new Flutter plugin.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'skk' => 'shikunkun.cool@163.com' }
+  s.author           = { 'raoxudong' => 'xudong.rao@outlook.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'JAnalytics'
+  s.dependency 'JCore','2.4.0'
+  s.dependency 'JAnalytics','2.1.2'
 
   s.ios.deployment_target = '8.0'
   s.static_framework = true

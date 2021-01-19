@@ -22,10 +22,10 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 17
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [
@@ -39,9 +39,7 @@ android {
 
 }
 dependencies {
-    implementation 'cn.jiguang.sdk:janalytics:1.2.2'
-    // 此处以JAnalytics 1.2.2 版本为例
-    implementation 'cn.jiguang.sdk:jcore:1.2.7'
-    // 此处以JCore 1.2.7 版本为例。
+    implementation 'cn.jiguang.sdk:janalytics:2.1.2'
+    implementation 'cn.jiguang.sdk:jcore:2.6.0'
     compileOnly files('libs/flutter.jar')
 }

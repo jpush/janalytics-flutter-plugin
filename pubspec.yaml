@@ -1,6 +1,6 @@
 name: janalytics
-description: Offically supported JAnalytics Flutter plugin.
-version: 0.0.3
+description: JIGUANG officially supported JAnalytics SDK Flutter plugin (Android & iOS). 极光统计官方支持的 Flutter 插件（Android & iOS）。
+version: 0.0.5
 author: shikk <shikunkun.cool@163.com>
 homepage: https://www.jiguang.cn
 
