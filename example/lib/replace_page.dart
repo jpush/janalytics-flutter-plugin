@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:janalytics/janalytics.dart';
+
 import 'event_fragment.dart';
 import 'page_fragment.dart';
-import 'package:janalytics/janalytics.dart';
 
 class ReplacePage extends StatefulWidget {
   @override
@@ -12,7 +13,8 @@ class ReplacePage extends StatefulWidget {
 }
 
 class ReplaceState extends State<ReplacePage> {
-  int  showIndex = 0;
+  int showIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,7 +35,7 @@ class ReplaceState extends State<ReplacePage> {
                   child: new EventFragment(),
                 ),
               ],
-            index: showIndex,
+              index: showIndex,
             ),
           ),
           new Container(
@@ -41,28 +43,38 @@ class ReplaceState extends State<ReplacePage> {
               children: <Widget>[
                 new Expanded(
                   child: new Container(
-                    child: new FlatButton(
-                        onPressed: onEventClick,
-                        child: new Text("显示Event"),
-                        color: Color(0xff585858),
-                        highlightColor: Color(0xff888888),
-                        splashColor: Color(0xff888888),
-                        textColor: Colors.white,
-                        padding: EdgeInsets.fromLTRB(10, 10, 10, 10)
+                    child: new TextButton(
+                      onPressed: onEventClick,
+                      child: new Text("显示Event"),
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
                     ),
                     margin: EdgeInsets.all(10),
                   ),
                 ),
                 new Expanded(
                   child: new Container(
-                    child: new FlatButton(
-                        onPressed: onPageClick,
-                        child: new Text("显示Page"),
-                        color: Color(0xff585858),
-                        highlightColor: Color(0xff888888),
-                        splashColor: Color(0xff888888),
-                        textColor: Colors.white,
-                        padding: EdgeInsets.fromLTRB(10, 10, 10, 10)
+                    child: new TextButton(
+                      onPressed: onPageClick,
+                      child: new Text("显示Page"),
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
                     ),
                     margin: EdgeInsets.all(10),
                   ),
@@ -77,7 +89,7 @@ class ReplaceState extends State<ReplacePage> {
     );
   }
 
-  void onPageClick(){
+  void onPageClick() {
     setState(() {
       if (showIndex == 1) {
         showIndex = 0;
@@ -86,7 +98,8 @@ class ReplaceState extends State<ReplacePage> {
       }
     });
   }
-  void onEventClick(){
+
+  void onEventClick() {
     setState(() {
       if (showIndex == 0) {
         showIndex = 1;

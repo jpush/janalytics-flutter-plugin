@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+
 import 'demo_utils.dart';
-import 'package:janalytics/janalytics.dart';
 
 class EventFragment extends StatefulWidget {
   @override
