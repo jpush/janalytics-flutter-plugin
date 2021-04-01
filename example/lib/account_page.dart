@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:janalytics/janalytics.dart';
-import 'demo_utils.dart';
 
+import 'demo_utils.dart';
 
 class AccountPage extends StatefulWidget {
   @override
@@ -62,7 +62,7 @@ class AccountPageState extends State<AccountPage> {
         title: new Text("Account"),
         backgroundColor: Color(0xff212121),
       ),
-      body: Builder(builder: (ctx){
+      body: Builder(builder: (ctx) {
         this.ctx = ctx;
         return new Column(
           children: <Widget>[
@@ -86,8 +86,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置account_id",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerAccountID,
                     ),
                   ),
@@ -105,8 +104,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置creation_time",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerCreateTime,
                     ),
                   ),
@@ -130,8 +128,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置sex",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerSex,
                     ),
                   ),
@@ -149,8 +146,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置birthdate",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerBirthdate,
                     ),
                   ),
@@ -174,8 +170,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置paid",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerPaid,
                     ),
                   ),
@@ -193,8 +188,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置phone",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerPhone,
                     ),
                   ),
@@ -218,8 +212,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置email",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerEmail,
                     ),
                   ),
@@ -237,8 +230,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置name",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerName,
                     ),
                   ),
@@ -270,8 +262,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置key",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerKey1,
                     ),
                   ),
@@ -281,8 +272,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置value",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerValue1,
                     ),
                   ),
@@ -310,8 +300,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置key",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerKey2,
                     ),
                   ),
@@ -321,8 +310,7 @@ class AccountPageState extends State<AccountPage> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                           hintText: "设置value",
-                          hintStyle: TextStyle(color: Colors.grey)
-                      ),
+                          hintStyle: TextStyle(color: Colors.grey)),
                       controller: controllerValue2,
                     ),
                   ),
@@ -334,32 +322,40 @@ class AccountPageState extends State<AccountPage> {
                 children: <Widget>[
                   new Expanded(
                       child: new Container(
-                        child: FlatButton(
-                          child: Text("IDENTIFY"),
-                          onPressed: identifyAccount,
-                          color: Color(0xff585858),
-                          highlightColor: Color(0xff888888),
-                          splashColor: Color(0xff888888),
-                          textColor: Colors.white,
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                        ),
-                        margin: EdgeInsets.all(10),
-                      )
-                  ),
+                    child: TextButton(
+                      child: Text("IDENTIFY"),
+                      onPressed: identifyAccount,
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
+                    ),
+                    margin: EdgeInsets.all(10),
+                  )),
                   new Expanded(
                       child: new Container(
-                        child: FlatButton(
-                          child: Text("DETACH"),
-                          onPressed: detachAccount,
-                          color: Color(0xff585858),
-                          highlightColor: Color(0xff888888),
-                          splashColor: Color(0xff888888),
-                          textColor: Colors.white,
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                        ),
-                        margin: EdgeInsets.all(10),
-                      )
-                  ),
+                    child: TextButton(
+                      child: Text("DETACH"),
+                      onPressed: detachAccount,
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
+                    ),
+                    margin: EdgeInsets.all(10),
+                  )),
                 ],
               ),
             ),
@@ -368,110 +364,120 @@ class AccountPageState extends State<AccountPage> {
                 children: <Widget>[
                   new Expanded(
                       child: new Container(
-                        child: TextField(
-                          autofocus: true,
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                              hintText: "周期单位秒",
-                              hintStyle: TextStyle(color: Colors.grey)
-                          ),
-                          controller: controllerPeriod,
-                        ),
-                        margin: EdgeInsets.all(10),
-                      )
-                  ),
+                    child: TextField(
+                      autofocus: true,
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                          hintText: "周期单位秒",
+                          hintStyle: TextStyle(color: Colors.grey)),
+                      controller: controllerPeriod,
+                    ),
+                    margin: EdgeInsets.all(10),
+                  )),
                   new Expanded(
                       child: new Container(
-                        child: FlatButton(
-                          child: Text("设置上报周期"),
-                          onPressed: setAnalyticsReportPeriod,
-                          color: Color(0xff585858),
-                          highlightColor: Color(0xff888888),
-                          splashColor: Color(0xff888888),
-                          textColor: Colors.white,
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                        ),
-                        margin: EdgeInsets.all(10),
-                      )
-                  ),
+                    child: TextButton(
+                      child: Text("设置上报周期"),
+                      onPressed: setAnalyticsReportPeriod,
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
+                    ),
+                    margin: EdgeInsets.all(10),
+                  )),
                 ],
               ),
             ),
           ],
         );
-      }
-      ),
+      }),
       backgroundColor: Color(0xff303030),
-        resizeToAvoidBottomPadding: false,
     );
   }
 
-  void identifyAccount(){
+  void identifyAccount() {
     var accountId = controllerAccountID.text;
-    if(accountId == null){
+    if (accountId == null) {
       DemoUtils.showToast(ctx, "accountId 不能为空");
       return;
     }
     int createTime;
-    if(checkedCreateTime){
-      try{
+    if (checkedCreateTime) {
+      try {
         createTime = int.parse(controllerCreateTime.text);
-      }on Exception{
+      } on Exception {
         DemoUtils.showToast(ctx, "createTime should be int");
       }
     }
     int sex;
-    if(checkedSex){
-      try{
+    if (checkedSex) {
+      try {
         sex = int.parse(controllerSex.text);
-      }on Exception{
+      } on Exception {
         DemoUtils.showToast(ctx, "sex should be int");
       }
     }
     String birthdate;
-    if(checkedBirthdate){
+    if (checkedBirthdate) {
       birthdate = controllerBirthdate.text;
     }
     int paid;
-    if(checkedPaid){
-      try{
+    if (checkedPaid) {
+      try {
         paid = int.parse(controllerPaid.text);
-      }on Exception{
+      } on Exception {
         DemoUtils.showToast(ctx, "paid should be int");
       }
     }
     String phone;
-    if(checkedPhone){
+    if (checkedPhone) {
       phone = controllerPhone.text;
     }
     String email;
-    if(checkedEmail){
+    if (checkedEmail) {
       email = controllerEmail.text;
     }
     String name;
-    if(checkedName){
+    if (checkedName) {
       name = controllerName.text;
     }
-    Map<String,String> extMap = Map();
-    String key1=  controllerKey1.text;
-    if(key1!=null && key1.isNotEmpty){
-      if(checkedKey1){
+    Map<String, String> extMap = Map();
+    String key1 = controllerKey1.text;
+    if (key1 != null && key1.isNotEmpty) {
+      if (checkedKey1) {
         extMap[key1] = null;
-      }else{
+      } else {
         extMap[key1] = controllerValue1.text;
       }
     }
 
     String key2 = controllerKey2.text;
-    if(key2!=null && key2.isNotEmpty){
-      if(checkedKey2){
+    if (key2 != null && key2.isNotEmpty) {
+      if (checkedKey2) {
         extMap[key2] = null;
-      }else{
+      } else {
         extMap[key2] = controllerValue2.text;
       }
     }
-    Janalytics janalytics  = Janalytics();
-    janalytics.identifyAccount(accountId,creationTime: createTime,sex: sex,paid: paid,birthdate: birthdate,phone: phone,email: email,name: name,extMap: extMap).then((map){
+    Janalytics janalytics = Janalytics();
+    janalytics
+        .identifyAccount(accountId,
+            creationTime: createTime,
+            sex: sex,
+            paid: paid,
+            birthdate: birthdate,
+            phone: phone,
+            email: email,
+            name: name,
+            extMap: extMap)
+        .then((map) {
       var code = map["code"];
       var msg = map["msg"];
       print("result code = $code   msg= $msg");
@@ -479,9 +485,9 @@ class AccountPageState extends State<AccountPage> {
     });
   }
 
-  void detachAccount(){
-    Janalytics janalytics  = Janalytics();
-    janalytics.detachAccount().then((map){
+  void detachAccount() {
+    Janalytics janalytics = Janalytics();
+    janalytics.detachAccount().then((map) {
       var code = map["code"];
       var msg = map["msg"];
       print("result code = $code   msg= $msg");
@@ -489,20 +495,18 @@ class AccountPageState extends State<AccountPage> {
     });
   }
 
-  void setAnalyticsReportPeriod(){
+  void setAnalyticsReportPeriod() {
     String text = controllerPeriod.text;
-    Janalytics janalytics  = Janalytics();
-    try{
+    Janalytics janalytics = Janalytics();
+    try {
       int period = int.parse(text);
       janalytics.setAnalyticsReportPeriod(period);
-    }on Exception {
+    } on Exception {
       DemoUtils.showToast(ctx, "时长应当是整数");
-    }catch (e){
+    } catch (e) {
       print("setAnalyticsReportPeriod error:  $e");
     }
   }
 }
 
-class Accout{
-
-}
+class Accout {}

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:janalytics/janalytics.dart';
+
 import 'event_fragment.dart';
 import 'page_fragment.dart';
-import 'package:janalytics/janalytics.dart';
 
 class ShowHidePage extends StatefulWidget {
   @override
@@ -12,7 +13,6 @@ class ShowHidePage extends StatefulWidget {
 }
 
 class ShowHideState extends State<ShowHidePage> {
-
   bool showPageFlag = true;
 
   @override
@@ -46,28 +46,38 @@ class ShowHideState extends State<ShowHidePage> {
               children: <Widget>[
                 new Expanded(
                   child: new Container(
-                    child: new FlatButton(
+                    child: new TextButton(
                       onPressed: onEventBtnClick,
                       child: new Text("显示Event"),
-                      color: Color(0xff585858),
-                      highlightColor: Color(0xff888888),
-                      splashColor: Color(0xff888888),
-                      textColor: Colors.white,
-                      padding: EdgeInsets.fromLTRB(10, 10, 10, 10)
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
                     ),
                     margin: EdgeInsets.all(10),
                   ),
                 ),
                 new Expanded(
                   child: new Container(
-                    child: new FlatButton(
-                        onPressed: onPageBtnClick,
-                        child: new Text("显示Page"),
-                        color: Color(0xff585858),
-                        highlightColor: Color(0xff888888),
-                        splashColor: Color(0xff888888),
-                        textColor: Colors.white,
-                        padding: EdgeInsets.fromLTRB(10, 10, 10, 10)
+                    child: new TextButton(
+                      onPressed: onPageBtnClick,
+                      child: new Text("显示Page"),
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.white),
+                        overlayColor:
+                            MaterialStateProperty.all(Color(0xff888888)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xff585858)),
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.fromLTRB(10, 10, 10, 10)),
+                      ),
                     ),
                     margin: EdgeInsets.all(10),
                   ),
@@ -82,26 +92,23 @@ class ShowHideState extends State<ShowHidePage> {
     );
   }
 
-  void onPageBtnClick(){
+  void onPageBtnClick() {
     setState(() {
       if (!showPageFlag) {
         showPageFlag = true;
         Janalytics janalytics = Janalytics();
         janalytics.onPageStart(widget.runtimeType.toString());
-      
       }
     });
   }
 
-  void onEventBtnClick(){
+  void onEventBtnClick() {
     setState(() {
-      if(showPageFlag){
+      if (showPageFlag) {
         showPageFlag = false;
         Janalytics janalytics = Janalytics();
         janalytics.onPageEnd(widget.runtimeType.toString());
       }
-      
     });
   }
-
 }
