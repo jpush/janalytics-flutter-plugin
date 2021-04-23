@@ -7,7 +7,7 @@
 
 ```yaml
 dependencies:
-  janalytics: 2.0.1
+  janalytics: 2.0.3
 ```
 
 ### 配置

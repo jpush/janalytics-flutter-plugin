@@ -28,10 +28,6 @@ android {
         minSdkVersion 17
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        manifestPlaceholders = [
-                JPUSH_APPKEY : "f93ce12e20d3706233e52a5b", //JPush 上注册的包名对应的 Appkey.
-                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
-        ]
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -39,7 +35,6 @@ android {
 
 }
 dependencies {
-    implementation 'cn.jiguang.sdk:janalytics:2.1.2'
     implementation 'cn.jiguang.sdk:jcore:2.6.0'
-//    compileOnly files('libs/flutter.jar')
+    implementation fileTree(dir: "libs", include: ["*.aar"])
 }
