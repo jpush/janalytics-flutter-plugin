@@ -14,9 +14,9 @@ class ViewPageState extends State<ViewPageScreen>
     with SingleTickerProviderStateMixin {
 
   Janalytics janalytics = new Janalytics();
-  TabController mTabController;
-  List<Tab> myTabs;
-  PageController mPageViewController;
+  TabController? mTabController;
+  List<Tab>? myTabs;
+  PageController? mPageViewController;
 
   @override
   void initState() {
@@ -25,12 +25,12 @@ class ViewPageState extends State<ViewPageScreen>
       length: 2,
       vsync: this,
     );
-    mTabController.addListener(() {
+    mTabController?.addListener(() {
       //TabBar的监听
-      if (mTabController.indexIsChanging) {
+      if (mTabController!.indexIsChanging) {
         //判断TabBar是否切换
 //        onPageChange(mTabController.index, p: mPageController);
-        mPageViewController.animateToPage(mTabController.index, duration: Duration(milliseconds: 300), curve: Curves.ease);
+        mPageViewController!.animateToPage(mTabController!.index, duration: Duration(milliseconds: 300), curve: Curves.ease);
       }
     });
     myTabs = <Tab>[
@@ -63,7 +63,7 @@ class ViewPageState extends State<ViewPageScreen>
               labelColor: Colors.white,
               unselectedLabelColor: Colors.white70,
               labelStyle: TextStyle(fontSize: 16.0),
-              tabs: myTabs,
+              tabs: myTabs!,
             ),
           ),
           Expanded(child: PageView.builder(itemBuilder: buildPage,controller: mPageViewController,onPageChanged: onPageChanged,itemCount: 2,)),
@@ -82,7 +82,7 @@ class ViewPageState extends State<ViewPageScreen>
   }
 
   void onPageChanged(int page) {
-    mTabController.animateTo(page,duration: Duration(milliseconds: 300),curve: Curves.ease);
+    mTabController?.animateTo(page,duration: Duration(milliseconds: 300),curve: Curves.ease);
   }
 
 }
