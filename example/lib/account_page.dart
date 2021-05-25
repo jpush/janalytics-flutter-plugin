@@ -16,7 +16,7 @@ class AccountPageState extends State<AccountPage> {
   var checkedCreateTime = false;
   var controllerCreateTime = new TextEditingController();
   var checkedSex = false;
-  BuildContext ctx;
+  BuildContext? ctx;
 
   var controllerSex = new TextEditingController();
 
@@ -405,46 +405,46 @@ class AccountPageState extends State<AccountPage> {
   void identifyAccount() {
     var accountId = controllerAccountID.text;
     if (accountId == null) {
-      DemoUtils.showToast(ctx, "accountId 不能为空");
+      DemoUtils.showToast(ctx!, "accountId 不能为空");
       return;
     }
-    int createTime;
+    int? createTime;
     if (checkedCreateTime) {
       try {
         createTime = int.parse(controllerCreateTime.text);
       } on Exception {
-        DemoUtils.showToast(ctx, "createTime should be int");
+        DemoUtils.showToast(ctx!, "createTime should be int");
       }
     }
-    int sex;
+    int? sex;
     if (checkedSex) {
       try {
         sex = int.parse(controllerSex.text);
       } on Exception {
-        DemoUtils.showToast(ctx, "sex should be int");
+        DemoUtils.showToast(ctx!, "sex should be int");
       }
     }
-    String birthdate;
+    String? birthdate;
     if (checkedBirthdate) {
       birthdate = controllerBirthdate.text;
     }
-    int paid;
+    int? paid;
     if (checkedPaid) {
       try {
         paid = int.parse(controllerPaid.text);
       } on Exception {
-        DemoUtils.showToast(ctx, "paid should be int");
+        DemoUtils.showToast(ctx!, "paid should be int");
       }
     }
-    String phone;
+    String? phone;
     if (checkedPhone) {
       phone = controllerPhone.text;
     }
-    String email;
+    String? email;
     if (checkedEmail) {
       email = controllerEmail.text;
     }
-    String name;
+    String? name;
     if (checkedName) {
       name = controllerName.text;
     }
@@ -452,7 +452,7 @@ class AccountPageState extends State<AccountPage> {
     String key1 = controllerKey1.text;
     if (key1 != null && key1.isNotEmpty) {
       if (checkedKey1) {
-        extMap[key1] = null;
+        extMap[key1] = "";
       } else {
         extMap[key1] = controllerValue1.text;
       }
@@ -461,7 +461,7 @@ class AccountPageState extends State<AccountPage> {
     String key2 = controllerKey2.text;
     if (key2 != null && key2.isNotEmpty) {
       if (checkedKey2) {
-        extMap[key2] = null;
+        extMap[key2] = "";
       } else {
         extMap[key2] = controllerValue2.text;
       }
@@ -478,20 +478,20 @@ class AccountPageState extends State<AccountPage> {
             name: name,
             extMap: extMap)
         .then((map) {
-      var code = map["code"];
-      var msg = map["msg"];
+      var code = map?["code"];
+      var msg = map?["msg"];
       print("result code = $code   msg= $msg");
-      DemoUtils.showToast(ctx, "result code = $code   msg= $msg");
+      DemoUtils.showToast(ctx!, "result code = $code   msg= $msg");
     });
   }
 
   void detachAccount() {
     Janalytics janalytics = Janalytics();
     janalytics.detachAccount().then((map) {
-      var code = map["code"];
-      var msg = map["msg"];
+      var code = map?["code"];
+      var msg = map?["msg"];
       print("result code = $code   msg= $msg");
-      DemoUtils.showToast(ctx, "result code = $code   msg= $msg");
+      DemoUtils.showToast(ctx!, "result code = $code   msg= $msg");
     });
   }
 
@@ -502,7 +502,7 @@ class AccountPageState extends State<AccountPage> {
       int period = int.parse(text);
       janalytics.setAnalyticsReportPeriod(period);
     } on Exception {
-      DemoUtils.showToast(ctx, "时长应当是整数");
+      DemoUtils.showToast(ctx!, "时长应当是整数");
     } catch (e) {
       print("setAnalyticsReportPeriod error:  $e");
     }

@@ -14,7 +14,7 @@ class Janalytics {
   static final Janalytics _instance =
       new Janalytics.private(const MethodChannel('janalytics'));
 
-  void setup({String appKey, String channel}) {
+  void setup({String? appKey, String? channel}) {
     _channel.invokeMethod("setup", {"appKey": appKey, "channel": channel});
   }
 
@@ -38,19 +38,19 @@ class Janalytics {
     _channel.invokeMethod("onPageEnd", {"pageName": pageName});
   }
 
-  void onCountEvent(String eventId, {Map<String, String> extMap}) {
+  void onCountEvent(String eventId, {Map<String, String>? extMap}) {
     _channel
         .invokeMethod("onCountEvent", {"eventId": eventId, "extMap": extMap});
   }
 
   void onCalculateEvent(String eventId, double eventValue,
-      {Map<String, String> extMap}) {
+      {Map<String, String>? extMap}) {
     _channel.invokeMethod("onCalculateEvent",
         {"eventId": eventId, "eventValue": eventValue, "extMap": extMap});
   }
 
   void onLoginEvent(String loginMethod, bool loginSuccess,
-      {Map<String, String> extMap}) {
+      {Map<String, String>? extMap}) {
     _channel.invokeMethod("onLoginEvent", {
       "loginMethod": loginMethod,
       "loginSuccess": loginSuccess,
@@ -59,7 +59,7 @@ class Janalytics {
   }
 
   void onRegisterEvent(String registerMethod, bool registerSuccess,
-      {Map<String, String> extMap}) {
+      {Map<String, String>? extMap}) {
     _channel.invokeMethod("onRegisterEvent", {
       "registerMethod": registerMethod,
       "registerSuccess": registerSuccess,
@@ -69,7 +69,7 @@ class Janalytics {
 
   void onBrowseEvent(
       String browseId, String browseName, String browseType, int browseDuration,
-      {Map<String, String> extMap}) {
+      {Map<String, String>? extMap}) {
     _channel.invokeMethod("onBrowseEvent", {
       "browseId": browseId,
       "browseName": browseName,
@@ -87,7 +87,7 @@ class Janalytics {
       Currency purchaseCurrency,
       String purchaseGoodsType,
       int purchaseGoodsCount,
-      {Map<String, String> extMap}) {
+      {Map<String, String>? extMap}) {
     _channel.invokeMethod("onPurchaseEvent", {
       "purchaseGoodsid": purchaseGoodsid,
       "purchaseGoodsName": purchaseGoodsName,
@@ -104,19 +104,19 @@ class Janalytics {
     _channel.invokeMethod("setAnalyticsReportPeriod", {"period": period});
   }
 
-  Future<Map<dynamic, dynamic>> identifyAccount(String accountID,
-      {int creationTime,
-      String name,
-      int sex,
-      int paid,
-      String birthdate,
-      String phone,
-      String email,
-      String weiboID,
-      String wechatID,
-      String qqID,
-      Map<String, String> extMap}) async {
-    final Map<dynamic, dynamic> result =
+  Future<Map<dynamic, dynamic>?> identifyAccount(String accountID,
+      {int? creationTime,
+      String? name,
+      int? sex,
+      int? paid,
+      String? birthdate,
+      String? phone,
+      String? email,
+      String? weiboID,
+      String? wechatID,
+      String? qqID,
+      Map<String, String>? extMap}) async {
+    final Map<dynamic, dynamic>? result =
         await _channel.invokeMethod("identifyAccount", {
       "accountID": accountID,
       "creationTime": creationTime,
@@ -134,8 +134,8 @@ class Janalytics {
     return result;
   }
 
-  Future<Map<dynamic, dynamic>> detachAccount() async {
-    final Map<dynamic, dynamic> result =
+  Future<Map<dynamic, dynamic>?> detachAccount() async {
+    final Map<dynamic, dynamic>? result =
         await _channel.invokeMethod("detachAccount");
     return result;
   }
