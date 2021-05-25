@@ -37,6 +37,6 @@ android {
 
 }
 dependencies {
-    implementation 'cn.jiguang.sdk:jcore:2.7.8'
+    implementation 'cn.jiguang.sdk:jcore:2.8.2'
     implementation 'cn.jiguang.sdk:janalytics:2.1.4'
 }

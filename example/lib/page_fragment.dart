@@ -60,7 +60,7 @@ class PageFragmentState extends State<PageFragment> with WidgetsBindingObserver{
     // TODO: implement initState
     super.initState();
     print("page fragment initState");
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance!.addObserver(this);
     janalytics.onPageStart(widget.runtimeType.toString());
   }
 
@@ -69,7 +69,7 @@ class PageFragmentState extends State<PageFragment> with WidgetsBindingObserver{
     // TODO: implement dispose
     super.dispose();
     print("page fragment dispose");
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance!.removeObserver(this);
     janalytics.onPageEnd(widget.runtimeType.toString());
   }
 
