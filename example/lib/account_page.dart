@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janalytics/janalytics.dart';
-
+import 'package:janalytics_flutter/janalytics.dart';
 import 'demo_utils.dart';
 
 class AccountPage extends StatefulWidget {

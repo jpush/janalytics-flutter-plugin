@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:package_info/package_info.dart';
 import 'viewpage.dart';
 import 'demo_utils.dart';
-import 'package:janalytics/janalytics.dart';
+import 'package:janalytics_flutter/janalytics.dart';
 import 'show_hide_page.dart';
 import 'replace_page.dart';
 import 'account_page.dart';
