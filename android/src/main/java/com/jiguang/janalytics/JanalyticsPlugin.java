@@ -34,7 +34,7 @@ public class JanalyticsPlugin implements FlutterPlugin, MethodCallHandler {
 
     @Override
     public void onAttachedToEngine(FlutterPluginBinding flutterPluginBinding) {
-        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "janalytics");
+        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "janalyticsplub");
         channel.setMethodCallHandler(this);
         context = flutterPluginBinding.getApplicationContext();
     }
