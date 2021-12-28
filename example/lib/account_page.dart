@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janalytics/janalytics.dart';
+import 'package:janalyticsplub/janalyticsplub.dart';
 
 import 'demo_utils.dart';
 

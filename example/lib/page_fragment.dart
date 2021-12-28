@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janalytics/janalytics.dart';
+import 'package:janalyticsplub/janalyticsplub.dart';
 
 class PageFragment extends StatefulWidget {
   @override
@@ -9,7 +9,8 @@ class PageFragment extends StatefulWidget {
   }
 }
 
-class PageFragmentState extends State<PageFragment> with WidgetsBindingObserver{
+class PageFragmentState extends State<PageFragment>
+    with WidgetsBindingObserver {
   final Janalytics janalytics = new Janalytics();
 
   @override
@@ -54,7 +55,6 @@ class PageFragmentState extends State<PageFragment> with WidgetsBindingObserver{
     );
   }
 
-
   @override
   void initState() {
     // TODO: implement initState
@@ -79,18 +79,16 @@ class PageFragmentState extends State<PageFragment> with WidgetsBindingObserver{
     super.deactivate();
   }
 
-
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // TODO: implement didChangeAppLifecycleState
     super.didChangeAppLifecycleState(state);
     print("page fragemnt didChangeAppLifecycleState ${state.toString()}");
-    if(state == AppLifecycleState.resumed){
+    if (state == AppLifecycleState.resumed) {
       janalytics.onPageStart(widget.runtimeType.toString());
-    }else if(state == AppLifecycleState.paused){
+    } else if (state == AppLifecycleState.paused) {
       janalytics.onPageEnd(widget.runtimeType.toString());
     }
-
   }
 
   @override

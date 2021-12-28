@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:package_info/package_info.dart';
 import 'viewpage.dart';
 import 'demo_utils.dart';
-import 'package:janalytics/janalytics.dart';
+import 'package:janalyticsplub/janalyticsplub.dart';
 import 'show_hide_page.dart';
 import 'replace_page.dart';
 import 'account_page.dart';
@@ -48,7 +48,9 @@ class HomeActivityState extends State<HomeActivity>
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    janalytics.setup(appKey: "e58a32cb3e4469ebf31867e5", channel: "devloper-default"); // 初始化sdk
+    janalytics.setup(
+        appKey: "e58a32cb3e4469ebf31867e5",
+        channel: "devloper-default"); // 初始化sdk
     janalytics.setDebugMode(true); // 打开调试模式
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling

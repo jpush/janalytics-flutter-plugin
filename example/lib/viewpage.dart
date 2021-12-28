@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janalytics/janalytics.dart';
+import 'package:janalyticsplub/janalyticsplub.dart';
 import 'page_fragment.dart';
 import 'event_fragment.dart';
 
@@ -12,7 +12,6 @@ class ViewPageScreen extends StatefulWidget {
 
 class ViewPageState extends State<ViewPageScreen>
     with SingleTickerProviderStateMixin {
-
   Janalytics janalytics = new Janalytics();
   TabController? mTabController;
   List<Tab>? myTabs;
@@ -30,7 +29,8 @@ class ViewPageState extends State<ViewPageScreen>
       if (mTabController!.indexIsChanging) {
         //判断TabBar是否切换
 //        onPageChange(mTabController.index, p: mPageController);
-        mPageViewController!.animateToPage(mTabController!.index, duration: Duration(milliseconds: 300), curve: Curves.ease);
+        mPageViewController!.animateToPage(mTabController!.index,
+            duration: Duration(milliseconds: 300), curve: Curves.ease);
       }
     });
     myTabs = <Tab>[
@@ -66,7 +66,13 @@ class ViewPageState extends State<ViewPageScreen>
               tabs: myTabs!,
             ),
           ),
-          Expanded(child: PageView.builder(itemBuilder: buildPage,controller: mPageViewController,onPageChanged: onPageChanged,itemCount: 2,)),
+          Expanded(
+              child: PageView.builder(
+            itemBuilder: buildPage,
+            controller: mPageViewController,
+            onPageChanged: onPageChanged,
+            itemCount: 2,
+          )),
         ],
       ),
       backgroundColor: Color(0xff303030),
@@ -82,7 +88,7 @@ class ViewPageState extends State<ViewPageScreen>
   }
 
   void onPageChanged(int page) {
-    mTabController?.animateTo(page,duration: Duration(milliseconds: 300),curve: Curves.ease);
+    mTabController?.animateTo(page,
+        duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
-
 }

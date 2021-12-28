@@ -12,7 +12,7 @@ class Janalytics {
   Janalytics.private(MethodChannel channel) : _channel = channel;
 
   static final Janalytics _instance =
-      new Janalytics.private(const MethodChannel('janalytics'));
+      new Janalytics.private(const MethodChannel('janalyticsplub'));
 
   void setup({String? appKey, String? channel}) {
     _channel.invokeMethod("setup", {"appKey": appKey, "channel": channel});
