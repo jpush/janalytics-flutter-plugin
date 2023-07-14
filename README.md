@@ -10,7 +10,7 @@
 dependencies:
   flutter_plugin_engagelab:
     git:
-      url: git://github.com/DevEngageLab/push-flutter-plugin.git
+      url: git://github.com/jpush/janalytics-flutter-plugin.git
       ref: master
 
 // pub 集成
