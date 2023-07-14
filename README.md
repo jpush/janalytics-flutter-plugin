@@ -6,6 +6,14 @@
 在工程 pubspec.yaml 中加入 dependencies
 
 ```yaml
+//github  集成
+dependencies:
+  flutter_plugin_engagelab:
+    git:
+      url: git://github.com/DevEngageLab/push-flutter-plugin.git
+      ref: master
+
+// pub 集成
 dependencies:
   janalytics: 2.1.8
 ```
