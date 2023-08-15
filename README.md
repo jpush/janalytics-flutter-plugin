@@ -15,7 +15,7 @@ dependencies:
 
 // pub 集成
 dependencies:
-  janalytics: 2.1.8
+  janalytics: 2.1.9
 ```
 
 ### 配置
