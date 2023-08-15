@@ -16,7 +16,7 @@
 @implementation JanalyticsPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
     FlutterMethodChannel* channel = [FlutterMethodChannel
-                                     methodChannelWithName:@"janalytics"
+                                     methodChannelWithName:@"janalyticsplub"
                                      binaryMessenger:[registrar messenger]];
     JanalyticsPlugin* instance = [[JanalyticsPlugin alloc] init];
     instance.channel = channel;
